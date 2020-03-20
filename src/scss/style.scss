@@ -1,0 +1,41 @@
+@import './reset.scss';
+@import './paddings.scss';
+
+$primary: #E25F4A;
+$success: #55DD55;
+$error: #E24D36;
+$warning: #EDC25E;
+$light-gray: #F2F2F3;
+$mid-gray: #C8CDD0;
+$dark-gray: #415058;
+$black: #1F292E;
+
+// Positioning
+
+.fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+// Backgrounds
+
+.bg-light-gray {
+  background-color: $light-gray;
+}
+
+.bg-mid-gray {
+  background-color: $mid-gray;
+}
+
+// Tabs
+
+.browsing-tab {
+  width: 3rem;
+  border-left: 1.5px solid $mid-gray;
+
+  &:hover {
+    border-left-color: $primary;
+  }
+}

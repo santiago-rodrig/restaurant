@@ -1,0 +1,43 @@
+// Mobile screens
+
+$base: 1rem;
+
+.p-5 {
+  padding: $base;
+}
+
+.p-4 {
+  padding: 0.75 * $base;
+}
+
+.p-3 {
+  padding: 0.625 * $base;
+}
+
+.p-2 {
+  padding: 0.5 * $base;
+}
+
+.p-1 {
+  padding: 0.25 * $base;
+}
+
+.pl-5 {
+  padding-left: $base;
+}
+
+.pl-4 {
+  padding-left: 0.75 * $base;
+}
+
+.pl-3 {
+  padding-left: 0.625 * $base;
+}
+
+.pl-2 {
+  padding-left: 0.5 * $base;
+}
+
+.pl-1 {
+  padding-left: 0.25 * $base;
+}
