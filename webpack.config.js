@@ -11,7 +11,8 @@ module.exports = {
       title: 'Restaurant Title',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      }
+      },
+      template: 'src/index.html'
     })
   ],
   output: {
@@ -24,6 +25,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader'
@@ -33,6 +40,24 @@ module.exports = {
         test: /\.(jpg|svg|png|gif)$/,
         use: [
           'file-loader'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function() {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
         ]
       }
     ]

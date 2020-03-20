@@ -1,1 +1,2 @@
-alert('is alive');
+import 'bootstrap';
+import './style.scss';
