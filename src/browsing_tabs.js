@@ -1,14 +1,30 @@
-function tabComponent(iconHTML) {
-  const contactTab = document.createElement('div');
-  contactTab.innerHTML = iconHTML;
+function colorClickHandler(tabs) {
+  for (let tab of tabs) {
+    tab.classList.remove('border-left-primary');
+  }
 
-  contactTab.classList.add(
+  this.classList.add('border-left-primary');
+}
+
+function removeColorClickHandler(tab, otherTabs) {
+  tab.removeEventListener('click', colorClickHandler.bind(tab, otherTabs));
+}
+
+function attachColorClickHandler(tab, otherTabs) {
+  tab.addEventListener('click', colorClickHandler.bind(tab, otherTabs));
+}
+
+function tabComponent(iconHTML) {
+  const tab = document.createElement('div');
+  tab.innerHTML = iconHTML;
+
+  tab.classList.add(
     'browsing-tab',
     'p-5',
     'pl-4'
   );
 
-  return contactTab;
+  return tab;
 }
 
 function browsingTabs() {
@@ -16,9 +32,17 @@ function browsingTabs() {
   const homeIcon = '<i class="fas fa-home"></i>';
   const contactIcon = '<i class="fas fa-address-card"></i>';
   const helpIcon = '<i class="fas fa-question"></i>';
-  tabs.appendChild(tabComponent(homeIcon));
-  tabs.appendChild(tabComponent(contactIcon));
-  tabs.appendChild(tabComponent(helpIcon));
+  const homeTab = tabComponent(homeIcon);
+  const contactTab = tabComponent(contactIcon);
+  const helpTab = tabComponent(helpIcon);
+  attachColorClickHandler(homeTab, [contactTab, helpTab]);
+  attachColorClickHandler(contactTab, [homeTab, helpTab]);
+  attachColorClickHandler(helpTab, [contactTab, homeTab]);
+  const tabCollection = [homeTab, contactTab, helpTab];
+
+  for (const tab of tabCollection) {
+    tabs.appendChild(tab);
+  }
 
   tabs.classList.add(
     'bg-light-gray',

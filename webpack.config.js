@@ -8,11 +8,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Restaurant Title',
+      template: 'src/index.html',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      },
-      template: 'src/index.html'
+      }
     })
   ],
   output: {

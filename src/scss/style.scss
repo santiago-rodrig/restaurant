@@ -29,6 +29,12 @@ $black: #1F292E;
   background-color: $mid-gray;
 }
 
+// Borders
+
+.border-left-primary {
+  border-left-color: $primary !important;
+}
+
 // Tabs
 
 .browsing-tab {
