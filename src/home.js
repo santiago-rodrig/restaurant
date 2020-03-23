@@ -13,7 +13,6 @@ function mainImageComponent() {
   const author = document.createElement('a');
   const site = document.createElement('a');
   const source = document.createElement('p');
-  source.setAttribute('id', 'photo-source');
   author.innerText = 'Michael Busch';
   author.setAttribute('href', 'https://unsplash.com/@migelon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText');
   const textOne = document.createTextNode('Photo by ');
@@ -24,7 +23,7 @@ function mainImageComponent() {
   source.appendChild(author);
   source.appendChild(textTwo);
   source.appendChild(site);
-  source.classList.add('text-center');
+  source.classList.add('text-center', 'photo-source');
   const container = document.createElement('div');
   const imageContainer = document.createElement('div');
   const image = new Image();
@@ -73,6 +72,21 @@ function dishComponent(name, description, image, price) {
   item.classList.add('dish', 'p-4');
   const imageContainer = document.createElement('div');
   imageContainer.appendChild(image);
+  const imageSource = document.createElement('p');
+  const imageAuthor = document.createElement('a');
+  imageAuthor.href = image.authorUrl;
+  imageAuthor.innerText = image.author;
+  const imageSite = document.createElement('a');
+  imageSite.href = image.siteUrl;
+  imageSite.innerText = image.site;
+  const imageTextOne = document.createTextNode('Photo by ');
+  const imageTextTwo = document.createTextNode(' on ');
+  imageSource.appendChild(imageTextOne);
+  imageSource.appendChild(imageAuthor);
+  imageSource.appendChild(imageTextTwo);
+  imageSource.appendChild(imageSite);
+  imageSource.classList.add('photo-source');
+  imageContainer.appendChild(imageSource);
   const title = document.createElement('div');
   title.innerText = name;
   title.classList.add('dish-title', 'text-center');
