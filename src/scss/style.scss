@@ -1,11 +1,23 @@
 @import './reset.scss';
 @import './paddings.scss';
 
+@mixin centered-box() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @font-face {
   font-family: 'Courgette';
   src: url('../fonts/Courgette-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto-Italic.ttf') format('truetype');
+  font-weight: 400, 900, 400;
+  font-style: normal, normal, italic;
 }
 
 $primary: #E25F4A;
@@ -21,7 +33,7 @@ $black: #1F292E;
 
 $heading-size: 2rem;
 
-h1, h2 { font-family: 'Courgette', cursive; }
+h1, h2 { font-family: 'Courgette', cursive; color: black; }
 
 h1 {
   font-size: $heading-size;
@@ -45,6 +57,17 @@ h1 {
     $heading-size: 2 * $heading-size;
     font-size: $heading-size;
   }
+}
+
+// Paragraphs {
+
+$base-paragraph-size: 1rem;
+$base-line-height: 1.5;
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: $black;
+  line-height: $base-line-height;
 }
 
 // Images
@@ -106,8 +129,17 @@ a {
 
 .home-image-container {
   div {
-    margin-left: auto;
-    margin-right: auto;
+    @include centered-box;
     width: 80%;
   }
+}
+
+#photo-source {
+  color: $mid-gray;
+  font-size: $base-paragraph-size * 0.8;
+}
+
+.home-text {
+  @include centered-box;
+  width: 80%;
 }

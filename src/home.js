@@ -37,13 +37,45 @@ function mainImageComponent() {
   return container;
 }
 
+function mainTextComponent() {
+  const container = document.createElement('div');
+  const paragraphOne = document.createElement('p');
+
+  const paragraphOneSentencesOne = [
+    'Ever wanted to eat in a restaurant where food is tasty, and people is nice?',
+    'Well, that\'s what this restaurant has to offer.',
+    'Our business has been around since 2001, and our customers always walk away happy.',
+    'Take some time to visit us! We are located at the following address:'
+  ];
+
+  const direction = document.createElement('strong');
+  direction.innerText = ' Local 17, Beverly Mall, Main Avenue, California, U.S.A';
+
+  const paragraphOneSentencesTwo = [
+    '. We will be waiting for you!',
+    'And when you taste our meals, you\'ll want to tell everyone about us!'
+  ];
+
+  const paragraphOneTextOne = document.createTextNode(paragraphOneSentencesOne.join(' '));
+  const paragraphOneTextTwo = document.createTextNode(paragraphOneSentencesTwo.join(' '));
+  paragraphOne.appendChild(paragraphOneTextOne);
+  paragraphOne.appendChild(direction);
+  paragraphOne.appendChild(paragraphOneTextTwo);
+  container.appendChild(paragraphOne);
+  container.classList.add('home-text');
+
+  return container;
+}
+
 function homeComponent() {
   const home = document.createElement('main');
   const mainHeading = mainHeadingComponent('Restaurant Logo');
   const mainImage = mainImageComponent();
+  const mainText = mainTextComponent();
   home.classList.add('page-content');
   home.appendChild(mainHeading);
   home.appendChild(mainImage);
+  home.appendChild(mainText);
 
   return home;
 }
