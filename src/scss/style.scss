@@ -47,6 +47,10 @@ h1 {
   }
 }
 
+// Images
+
+img { max-width: 100%; }
+
 // Positioning
 
 .fixed-left {
@@ -82,3 +86,28 @@ h1 {
 // Text
 
 .text-center { text-align: center; }
+
+// Links
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $primary;
+  }
+}
+
+// Home
+
+.home-image-container {
+  div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+}
