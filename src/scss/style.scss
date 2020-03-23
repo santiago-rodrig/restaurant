@@ -31,11 +31,11 @@ $black: #1F292E;
 
 // Headings
 
-$heading-size: 2rem;
 
 h1, h2 { font-family: 'Courgette', cursive; color: $black; }
 
 h1 {
+  $heading-size: 2rem;
   font-size: $heading-size;
 
   @media (min-width: 576px) {
