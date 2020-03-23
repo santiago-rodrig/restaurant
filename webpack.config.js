@@ -1,5 +1,7 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -7,10 +9,28 @@ module.exports = {
     app: './src/index.js'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      }
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/chef.png',
+      mode: 'webapp',
+      devMode: 'webapp',
+      favicons: {
+        appName: 'restaurant',
+        appDescription: 'A single page restaurant site',
+        developerName: 'Santiago Rodríguez',
+        developerURL: null,
+        background: '#ddd',
+        theme_color: '#333',
+        icons: {
+          coast: false,
+          yandex: false
+        }
       }
     })
   ],
