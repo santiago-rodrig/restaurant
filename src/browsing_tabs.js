@@ -3,7 +3,7 @@ function colorClickHandler(tabs) {
     tab.classList.remove('border-left-primary');
   }
 
-  this.classList.add('border-left-primary');
+  this.classList.toggle('border-left-primary');
 }
 
 function removeColorClickHandler(tab, otherTabs) {
@@ -33,6 +33,7 @@ function browsingTabs() {
   const contactIcon = '<i class="fas fa-address-card"></i>';
   const helpIcon = '<i class="fas fa-question"></i>';
   const homeTab = tabComponent(homeIcon);
+  homeTab.classList.add('border-left-primary');
   const contactTab = tabComponent(contactIcon);
   const helpTab = tabComponent(helpIcon);
   attachColorClickHandler(homeTab, [contactTab, helpTab]);

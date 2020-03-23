@@ -1,6 +1,13 @@
 @import './reset.scss';
 @import './paddings.scss';
 
+@font-face {
+  font-family: 'Courgette';
+  src: url('../fonts/Courgette-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 $primary: #E25F4A;
 $success: #55DD55;
 $error: #E24D36;
@@ -9,6 +16,36 @@ $light-gray: #F2F2F3;
 $mid-gray: #C8CDD0;
 $dark-gray: #415058;
 $black: #1F292E;
+
+// Headings
+
+$heading-size: 2rem;
+
+h1, h2 { font-family: 'Courgette', cursive; }
+
+h1 {
+  font-size: $heading-size;
+
+  @media (min-width: 576px) {
+    $heading-size: 1.25 * $heading-size;
+    font-size: $heading-size;
+  }
+
+  @media (min-width: 768px) {
+    $heading-size: 1.375 * $heading-size;
+    font-size: $heading-size;
+  }
+
+  @media (min-width: 992px) {
+    $heading-size: 1.5 * $heading-size;
+    font-size: $heading-size;
+  }
+
+  @media (min-width: 1200px) {
+    $heading-size: 2 * $heading-size;
+    font-size: $heading-size;
+  }
+}
 
 // Positioning
 
@@ -21,27 +58,27 @@ $black: #1F292E;
 
 // Backgrounds
 
-.bg-light-gray {
-  background-color: $light-gray;
-}
+.bg-light-gray { background-color: $light-gray; }
 
-.bg-mid-gray {
-  background-color: $mid-gray;
-}
+.bg-mid-gray { background-color: $mid-gray; }
 
 // Borders
 
-.border-left-primary {
-  border-left-color: $primary !important;
-}
+.border-left-primary { border-left-color: $primary !important; }
 
 // Tabs
 
 .browsing-tab {
   width: 3rem;
-  border-left: 1.5px solid $mid-gray;
+  border-left: 4px solid $mid-gray;
 
-  &:hover {
-    border-left-color: $primary;
-  }
+  &:hover { border-left-color: $dark-gray; }
 }
+
+// Page Content
+
+.page-content { margin-left: 3rem; }
+
+// Text
+
+.text-center { text-align: center; }
