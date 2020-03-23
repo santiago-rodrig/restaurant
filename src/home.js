@@ -1,4 +1,5 @@
 import MainImage from './home_image.jpg';
+import PastaImage from './pasta.jpg';
 
 function mainHeadingComponent(headingText) {
   const heading = document.createElement('h1');
@@ -67,15 +68,70 @@ function mainTextComponent() {
   return container;
 }
 
+function dishComponent(name, description, image, price) {
+  const item = document.createElement('li');
+  item.classList.add('dish', 'p-4');
+  const imageContainer = document.createElement('div');
+  imageContainer.appendChild(image);
+  const title = document.createElement('div');
+  title.innerText = name;
+  title.classList.add('dish-title', 'text-center');
+  const priceSpan = document.createElement('span');
+  priceSpan.innerText = price;
+  priceSpan.classList.add('price');
+  title.appendChild(priceSpan);
+  const leftContainer = document.createElement('div');
+  const rightContainer = document.createElement('div');
+  leftContainer.appendChild(imageContainer);
+  leftContainer.appendChild(title);
+  const descriptionParagraph = document.createElement('p');
+  descriptionParagraph.innerText = description;
+  rightContainer.appendChild(descriptionParagraph);
+  item.appendChild(leftContainer);
+  item.appendChild(rightContainer);
+
+  return item;
+}
+
+function dishesComponent() {
+  const container = document.createElement('div');
+  const heading = document.createElement('h2');
+  heading.innerText = 'Dishes';
+  heading.classList.add('text-center');
+  container.appendChild(heading);
+  const list = document.createElement('ul');
+  list.classList.add('dishes');
+  const pastaImage = new Image();
+  pastaImage.src = PastaImage;
+  pastaImage.author = 'Krista Stucchio';
+  pastaImage.authorUrl = 'https://unsplash.com/@kristastucchio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+  pastaImage.site = 'Unsplash';
+  pastaImage.siteUrl = 'https://unsplash.com/s/photos/pasta?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+  const pastaDescription = [
+    'A delicious dish, you\'ll love it, it is not just pasta, it is the best pasta.',
+    'Our chef cooks the best pasta! I assure you you\'ll not regret it at all.',
+    'In the impossible case of you not liking the pasta, we\'ll give you your money back'
+  ].join(' ');
+
+  const pasta = dishComponent('Pasta', pastaDescription, pastaImage, '$20');
+  list.appendChild(pasta);
+  container.appendChild(list);
+
+  return container;
+}
+
 function homeComponent() {
   const home = document.createElement('main');
   const mainHeading = mainHeadingComponent('Restaurant Logo');
   const mainImage = mainImageComponent();
   const mainText = mainTextComponent();
+  const dishes = dishesComponent();
   home.classList.add('page-content');
   home.appendChild(mainHeading);
   home.appendChild(mainImage);
   home.appendChild(mainText);
+  home.appendChild(dishes);
 
   return home;
 }

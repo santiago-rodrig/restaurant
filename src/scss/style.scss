@@ -33,7 +33,7 @@ $black: #1F292E;
 
 $heading-size: 2rem;
 
-h1, h2 { font-family: 'Courgette', cursive; color: black; }
+h1, h2 { font-family: 'Courgette', cursive; color: $black; }
 
 h1 {
   font-size: $heading-size;
@@ -125,6 +125,10 @@ a {
   }
 }
 
+// Lists
+
+ul { list-style-type: none; }
+
 // Home
 
 .home-image-container {
@@ -142,4 +146,28 @@ a {
 .home-text {
   @include centered-box;
   width: 80%;
+}
+
+.dishes {
+  @include centered-box;
+  width: 80%;
+  padding: 0;
+}
+
+.dish {
+  background-color: $light-gray;
+  border-radius: 1rem;
+}
+
+.dish-title {
+  font-size: $base-paragraph-size * 1.2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: $black;
+}
+
+.price {
+  margin-left: 0.5rem;
+  color: $success;
 }
