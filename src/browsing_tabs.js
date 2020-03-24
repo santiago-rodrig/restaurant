@@ -21,6 +21,7 @@ function replaceClickHandler() {
   content.removeChild(footer);
   content.appendChild(this);
   content.appendChild(footer);
+  window.scrollTo(0, 0);
 }
 
 function removeColorClickHandler(tab, otherTabs) {
