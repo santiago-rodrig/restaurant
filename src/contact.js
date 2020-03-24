@@ -87,6 +87,7 @@ function emailComponent(email) {
 function emailsComponent() {
   const container = document.createElement('div');
   const separator = document.createElement('hr');
+  separator.classList.add('contact-separator');
   const heading = document.createElement('h2');
   heading.innerText = 'Emails';
   heading.classList.add('text-center');
@@ -95,27 +96,54 @@ function emailsComponent() {
   const emailTwo = emailComponent('alternative.email@example.com');
   emails.appendChild(emailOne);
   emails.appendChild(emailTwo);
+  emails.classList.add('text-center', 'contact-emails');
   container.appendChild(separator);
   container.appendChild(heading);
   container.appendChild(emails);
+  container.classList.add('emails');
 
   return container;
 }
 
 function phonesComponent() {
+  const container = document.createElement('div');
+  const separator = document.createElement('hr');
+  separator.classList.add('contact-separator');
+  const heading = document.createElement('h2');
+  heading.innerText = 'Phones';
+  heading.classList.add('text-center');
+  const phones = document.createElement('ul');
+  const phoneOne = document.createElement('li');
+  const phoneTwo = document.createElement('li');
+  phoneOne.innerText = '+1-541-754-3010';
+  phoneTwo.innerText = '+1-145-457-0103';
+  phones.appendChild(phoneOne);
+  phones.appendChild(phoneTwo);
+  phones.classList.add('text-center', 'contact-phones');
+  container.appendChild(separator);
+  container.appendChild(heading);
+  container.appendChild(phones);
+  container.classList.add('phones');
+
+  return container;
 }
 
 function contactComponent() {
   const contact = document.createElement('div');
-  contact.classList.add('main-content', 'page-content');
+  contact.classList.add('main-content', 'page-content', 'pb-5');
   const heading = headingComponent();
   contact.appendChild(heading);
   const mainContainer = document.createElement('div');
   mainContainer.appendChild(mainImageComponent());
-  mainContainer.classList.add('clearfix');
+  mainContainer.classList.add('clearfix', 'px-2');
   mainContainer.appendChild(mainTextComponent());
+  const dataContainer = document.createElement('div');
+  dataContainer.classList.add('clearfix');
+  dataContainer.classList.add('contact-data');
+  dataContainer.appendChild(emailsComponent());
+  dataContainer.appendChild(phonesComponent());
+  mainContainer.appendChild(dataContainer);
   contact.appendChild(mainContainer);
-  contact.appendChild(emailsComponent());
 
   return contact;
 }

@@ -179,14 +179,13 @@ function homeComponent() {
   const separator = document.createElement('hr');
   const mainContainer = document.createElement('div');
   mainContainer.classList.add('clearfix');
-  home.classList.add('page-content');
+  home.classList.add('page-content', 'main-content', 'pb-5');
   home.appendChild(mainHeading);
   mainContainer.appendChild(mainImage);
   mainContainer.appendChild(mainText);
   home.appendChild(mainContainer);
   home.appendChild(separator);
   home.appendChild(dishes);
-  home.classList.add('main-content');
 
   return home;
 }

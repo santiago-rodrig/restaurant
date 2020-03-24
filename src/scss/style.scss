@@ -3,6 +3,17 @@
 @import './universal.scss';
 @import './margins.scss';
 
+// Content
+
+#content {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 10rem;
+
+  @media (min-width: 576px) {
+  }
+}
+
 // Browsing Tabs
 
 .browsing-tab {
@@ -16,7 +27,7 @@
 
 .page-content { margin-left: 3rem; }
 
-// Home
+// Main
 
 .main-image-container {
   div {
@@ -24,13 +35,17 @@
     width: 80%;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     float: left;
+    width: 20rem;
+  }
+
+  @media (min-width: 992px) {
     width: 35rem;
   }
 
   @media (min-width: 1200px) {
-    width: 50rem;
+    width: 30rem;
   }
 }
 
@@ -93,7 +108,7 @@
 
   @media (min-width: 768px) {
     display: block;
-    flex-basis: 18rem;
+    flex-basis: 17rem;
   }
 
   @media (min-width: 992px) {
@@ -121,7 +136,43 @@
   color: $success;
 }
 
+// Contact
+
+.contact-emails, .contact-phones {
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.contact-data {
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.emails, .phones {
+  @media (min-width: 768px) {
+    h2 {
+      text-align: left;
+    }
+  }
+}
+
+.contact-separator {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
 // Footer
+
+#main-footer {
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  right: 0;
+}
 
 .footer-links {
   display: flex;
