@@ -1,9 +1,25 @@
+import HomeComponent from './home';
+// import ContactComponent from './contact';
+// import HelpComponent from './help';
+
 function colorClickHandler(tabs) {
   for (let tab of tabs) {
     tab.classList.remove('border-left-primary');
   }
 
-  this.classList.toggle('border-left-primary');
+  if (!this.classList.contains('border-left-primary')) {
+    this.classList.add('border-left-primary');
+  }
+}
+
+function replaceClickHandler() {
+  const content = document.getElementById('content');
+  const mainContent = document.getElementsByClassName('main-content')[0];
+  if (mainContent) content.removeChild(mainContent);
+  const footer = content.lastChild;
+  content.removeChild(footer);
+  content.appendChild(this);
+  content.appendChild(footer);
 }
 
 function removeColorClickHandler(tab, otherTabs) {
@@ -12,6 +28,10 @@ function removeColorClickHandler(tab, otherTabs) {
 
 function attachColorClickHandler(tab, otherTabs) {
   tab.addEventListener('click', colorClickHandler.bind(tab, otherTabs));
+}
+
+function attachReplaceClickHandler(tab, component) {
+  tab.addEventListener('click', replaceClickHandler.bind(component));
 }
 
 function tabComponent(iconHTML) {
@@ -33,12 +53,14 @@ function browsingTabs() {
   const contactIcon = '<i class="fas fa-address-card"></i>';
   const helpIcon = '<i class="fas fa-question"></i>';
   const homeTab = tabComponent(homeIcon);
-  homeTab.classList.add('border-left-primary');
   const contactTab = tabComponent(contactIcon);
   const helpTab = tabComponent(helpIcon);
   attachColorClickHandler(homeTab, [contactTab, helpTab]);
   attachColorClickHandler(contactTab, [homeTab, helpTab]);
   attachColorClickHandler(helpTab, [contactTab, homeTab]);
+  attachReplaceClickHandler(homeTab, HomeComponent());
+  // attachReplaceClickHandler(contactTab, ContactComponent());
+  // attachReplaceClickHandler(helpTab, HelpComponent());
   const tabCollection = [homeTab, contactTab, helpTab];
 
   for (const tab of tabCollection) {

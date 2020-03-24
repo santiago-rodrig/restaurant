@@ -183,6 +183,7 @@ function homeComponent() {
   home.appendChild(mainText);
   home.appendChild(separator);
   home.appendChild(dishes);
+  home.classList.add('main-content');
 
   return home;
 }

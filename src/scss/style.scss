@@ -8,7 +8,7 @@
   width: 3rem;
   border-left: 4px solid $mid-gray;
 
-  &:hover { border-left-color: $dark-gray; }
+  &:hover { border-left-color: $dark-gray; cursor: pointer; }
 }
 
 // Page Content
