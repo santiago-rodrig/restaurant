@@ -74,7 +74,7 @@ function emailComponent(email) {
   link.target = '_blank';
 
   link.href = [
-    'mail_to:',
+    'mailto:',
     email,
     '?Subject=I%20want%20to%20make%20a%20reservation'
   ].join('');

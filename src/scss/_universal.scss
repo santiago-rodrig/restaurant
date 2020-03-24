@@ -30,26 +30,30 @@ $black: #1F292E;
 
 h1, h2 { font-family: 'Courgette', cursive; color: $black; }
 
-h1 {
-  $heading-size: 2rem;
-  font-size: $heading-size;
+@mixin heading($number, $base) {
+  h#{$number} {
+    font-size: $base;
 
-  @media (min-width: 576px) {
-    font-size: $heading-size * 1.25;
-  }
+    @media (min-width: 576px) {
+      font-size: $base * 1.25;
+    }
 
-  @media (min-width: 768px) {
-    font-size: $heading-size * 1.375;
-  }
+    @media (min-width: 768px) {
+      font-size: $base * 1.375;
+    }
 
-  @media (min-width: 992px) {
-    font-size: $heading-size * 1.5;
-  }
+    @media (min-width: 992px) {
+      font-size: $base * 1.5;
+    }
 
-  @media (min-width: 1200px) {
-    font-size: $heading-size * 2;
+    @media (min-width: 1200px) {
+      font-size: $base * 1.75;
+    }
   }
 }
+
+@include heading('1', 2rem);
+@include heading('2', 1.5rem);
 
 // Paragraphs {
 
