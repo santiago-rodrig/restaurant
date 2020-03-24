@@ -1,5 +1,5 @@
 import HomeComponent from './home';
-// import ContactComponent from './contact';
+import ContactComponent from './contact';
 // import HelpComponent from './help';
 
 function colorClickHandler(tabs) {
@@ -59,7 +59,7 @@ function browsingTabs() {
   attachColorClickHandler(contactTab, [homeTab, helpTab]);
   attachColorClickHandler(helpTab, [contactTab, homeTab]);
   attachReplaceClickHandler(homeTab, HomeComponent());
-  // attachReplaceClickHandler(contactTab, ContactComponent());
+  attachReplaceClickHandler(contactTab, ContactComponent());
   // attachReplaceClickHandler(helpTab, HelpComponent());
   const tabCollection = [homeTab, contactTab, helpTab];
 
