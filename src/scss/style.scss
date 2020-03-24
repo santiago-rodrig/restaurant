@@ -1,99 +1,8 @@
 @import './reset.scss';
 @import './paddings.scss';
+@import './universal.scss';
 
-@mixin centered-box() {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@font-face {
-  font-family: 'Courgette';
-  src: url('../fonts/Courgette-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto-Italic.ttf') format('truetype');
-  font-weight: 400, 900, 400;
-  font-style: normal, normal, italic;
-}
-
-$primary: #E25F4A;
-$success: #55DD55;
-$error: #E24D36;
-$warning: #EDC25E;
-$light-gray: #F2F2F3;
-$mid-gray: #C8CDD0;
-$dark-gray: #415058;
-$black: #1F292E;
-
-// Headings
-
-
-h1, h2 { font-family: 'Courgette', cursive; color: $black; }
-
-h1 {
-  $heading-size: 2rem;
-  font-size: $heading-size;
-
-  @media (min-width: 576px) {
-    $heading-size: 1.25 * $heading-size;
-    font-size: $heading-size;
-  }
-
-  @media (min-width: 768px) {
-    $heading-size: 1.375 * $heading-size;
-    font-size: $heading-size;
-  }
-
-  @media (min-width: 992px) {
-    $heading-size: 1.5 * $heading-size;
-    font-size: $heading-size;
-  }
-
-  @media (min-width: 1200px) {
-    $heading-size: 2 * $heading-size;
-    font-size: $heading-size;
-  }
-}
-
-// Paragraphs {
-
-$base-paragraph-size: 1rem;
-$base-line-height: 1.5;
-
-p {
-  font-family: 'Roboto', sans-serif;
-  color: $black;
-  line-height: $base-line-height;
-}
-
-// Images
-
-img { max-width: 100%; }
-
-// Positioning
-
-.fixed-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-}
-
-// Backgrounds
-
-.bg-light-gray { background-color: $light-gray; }
-
-.bg-mid-gray { background-color: $mid-gray; }
-
-// Borders
-
-.border-left-primary { border-left-color: $primary !important; }
-
-// Tabs
+// Browsing Tabs
 
 .browsing-tab {
   width: 3rem;
@@ -106,28 +15,6 @@ img { max-width: 100%; }
 
 .page-content { margin-left: 3rem; }
 
-// Text
-
-.text-center { text-align: center; }
-
-// Links
-
-a {
-  color: $primary;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:visited {
-    color: $primary;
-  }
-}
-
-// Lists
-
-ul { list-style-type: none; }
 
 // Home
 
