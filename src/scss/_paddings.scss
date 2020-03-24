@@ -2,6 +2,8 @@
 
 $base: 1rem;
 
+// All sides
+
 .p-5 {
   padding: $base;
 }
@@ -22,6 +24,12 @@ $base: 1rem;
   padding: 0.25 * $base;
 }
 
+.p-0 {
+  padding: 0;
+}
+
+// Left side
+
 .pl-5 {
   padding-left: $base;
 }
@@ -40,4 +48,40 @@ $base: 1rem;
 
 .pl-1 {
   padding-left: 0.25 * $base;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+// Top and Bottom
+
+.py-5 {
+  padding-top: $base;
+  padding-bottom: $base;
+}
+
+.py-4 {
+  padding-top: 0.75 * $base;
+  padding-bottom: 0.75 * $base;
+}
+
+.py-3 {
+  padding-top: 0.625 * $base;
+  padding-bottom: 0.625 * $base;
+}
+
+.py-2 {
+  padding-top: 0.5 * $base;
+  padding-bottom: 0.5 * $base;
+}
+
+.py-1 {
+  padding-top: 0.25 * $base;
+  padding-bottom: 0.25 * $base;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
 }

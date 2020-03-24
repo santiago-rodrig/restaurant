@@ -1,5 +1,7 @@
 import MainImage from './home_image.jpg';
 import PastaImage from './pasta.jpg';
+import TacosImage from './tacos.jpg';
+import BurguerImage from './burguer.jpg';
 
 function mainHeadingComponent(headingText) {
   const heading = document.createElement('h1');
@@ -30,6 +32,7 @@ function mainImageComponent() {
   image.src = MainImage;
   image.setAttribute('id', 'home-image');
   imageContainer.appendChild(image);
+  imageContainer.classList.add('main-photo');
   container.appendChild(imageContainer);
   container.appendChild(source);
   container.classList.add('home-image-container');
@@ -85,7 +88,7 @@ function dishComponent(name, description, image, price) {
   imageSource.appendChild(imageAuthor);
   imageSource.appendChild(imageTextTwo);
   imageSource.appendChild(imageSite);
-  imageSource.classList.add('photo-source');
+  imageSource.classList.add('photo-source', 'text-center');
   imageContainer.appendChild(imageSource);
   const title = document.createElement('div');
   title.innerText = name;
@@ -98,9 +101,11 @@ function dishComponent(name, description, image, price) {
   const rightContainer = document.createElement('div');
   leftContainer.appendChild(imageContainer);
   leftContainer.appendChild(title);
+  leftContainer.classList.add('dish-left');
   const descriptionParagraph = document.createElement('p');
   descriptionParagraph.innerText = description;
   rightContainer.appendChild(descriptionParagraph);
+  rightContainer.classList.add('dish-right');
   item.appendChild(leftContainer);
   item.appendChild(rightContainer);
 
@@ -130,6 +135,36 @@ function dishesComponent() {
 
   const pasta = dishComponent('Pasta', pastaDescription, pastaImage, '$20');
   list.appendChild(pasta);
+  const tacosImage = new Image();
+  tacosImage.src = TacosImage;
+  tacosImage.author = 'Edgar Castrejon';
+  tacosImage.authorUrl = 'https://unsplash.com/@edgarraw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+  tacosImage.site = 'Unsplash';
+  tacosImage.siteUrl = 'https://unsplash.com/s/photos/tacos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+  const tacosDescription = [
+    'We are proud of our tacos, and surely you\'ll be proud of yourself for finding the perfect tacos in our restaurant.',
+    'Our establishment could easily win an international tacos competition!',
+    'If you are not convinced with these words, you can come and try them.'
+  ].join(' ');
+
+  const tacos = dishComponent('Tacos', tacosDescription, tacosImage, '$15');
+  list.appendChild(tacos);
+  const burguerImage = new Image();
+  burguerImage.src = BurguerImage;
+  burguerImage.author = 'Léo Roza';
+  burguerImage.authorUrl = 'https://unsplash.com/@leoroza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+  burguerImage.site = 'Unsplash';
+  burguerImage.siteUrl = 'https://unsplash.com/s/photos/hamburguer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText';
+
+  const burguerDescription = [
+    'Never underestimate the power and taste of a hamburguer, they are great!',
+    'And even greater are our hamburguers, made by true professionals.',
+    'Take a chance to taste our awesome hamburguers!'
+  ].join(' ');
+
+  const burguer = dishComponent('Hamburguer', burguerDescription, burguerImage, '$10');
+  list.appendChild(burguer);
   container.appendChild(list);
 
   return container;
@@ -141,10 +176,12 @@ function homeComponent() {
   const mainImage = mainImageComponent();
   const mainText = mainTextComponent();
   const dishes = dishesComponent();
+  const separator = document.createElement('hr');
   home.classList.add('page-content');
   home.appendChild(mainHeading);
   home.appendChild(mainImage);
   home.appendChild(mainText);
+  home.appendChild(separator);
   home.appendChild(dishes);
 
   return home;

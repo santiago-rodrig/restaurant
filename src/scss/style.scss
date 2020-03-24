@@ -1,6 +1,6 @@
 @import './reset.scss';
 @import './paddings.scss';
-@import './universal.scss';
+@import './universal.scss'; @import './margins.scss';
 
 // Browsing Tabs
 
@@ -15,7 +15,6 @@
 
 .page-content { margin-left: 3rem; }
 
-
 // Home
 
 .home-image-container {
@@ -23,7 +22,24 @@
     @include centered-box;
     width: 80%;
   }
+
+  @media (min-width: 992px) {
+    float: left;
+    width: 35rem;
+  }
+
+  @media (min-width: 1200px) {
+    width: 50rem;
+  }
 }
+
+.main-photo {
+  padding: 0.5rem;
+  border: 1px solid $mid-gray;
+  transform: rotate(-1deg);
+}
+
+#home-image { border: 1px solid $mid-gray; }
 
 .photo-source {
   color: $mid-gray;
@@ -39,11 +55,58 @@
   @include centered-box;
   width: 80%;
   padding: 0;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@mixin dish-flex() {
+  display: flex;
+
+  .dish-left {
+    text-align: center;
+    img {
+      width: 7rem;
+    }
+  }
+
+  .dish-right {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .dish {
+  margin-bottom: 1rem;
   background-color: $light-gray;
   border-radius: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 576px) {
+    @include dish-flex;
+  }
+
+  @media (min-width: 768px) {
+    display: block;
+    flex-basis: 18rem;
+  }
+
+  @media (min-width: 992px) {
+    @include dish-flex;
+    flex-basis: 23rem;
+  }
+
+  @media (min-width: 1200px) {
+    flex-basis: 30rem;
+  }
+
+  img { border-radius: 1rem; }
 }
 
 .dish-title {
@@ -58,3 +121,27 @@
   margin-left: 0.5rem;
   color: $success;
 }
+
+// Footer
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  font-size: $base-paragraph-size * 2;
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.copyright { font-size: $base-paragraph-size * 0.8; }

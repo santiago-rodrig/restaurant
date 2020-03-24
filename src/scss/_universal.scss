@@ -35,23 +35,19 @@ h1 {
   font-size: $heading-size;
 
   @media (min-width: 576px) {
-    $heading-size: 1.25 * $heading-size;
-    font-size: $heading-size;
+    font-size: $heading-size * 1.25;
   }
 
   @media (min-width: 768px) {
-    $heading-size: 1.375 * $heading-size;
-    font-size: $heading-size;
+    font-size: $heading-size * 1.375;
   }
 
   @media (min-width: 992px) {
-    $heading-size: 1.5 * $heading-size;
-    font-size: $heading-size;
+    font-size: $heading-size * 1.5;
   }
 
   @media (min-width: 1200px) {
-    $heading-size: 2 * $heading-size;
-    font-size: $heading-size;
+    font-size: $heading-size * 2;
   }
 }
 
@@ -85,6 +81,8 @@ img { max-width: 100%; }
 
 .bg-mid-gray { background-color: $mid-gray; }
 
+.bg-black { background-color: $black; }
+
 // Borders
 
 .border-left-primary { border-left-color: $primary !important; }
@@ -92,6 +90,8 @@ img { max-width: 100%; }
 // Text
 
 .text-center { text-align: center; }
+
+.text-light-gray { color: $light-gray; }
 
 // Links
 
@@ -111,3 +111,13 @@ a {
 // Lists
 
 ul { list-style-type: none; }
+
+// Horizontal lines
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: $light-gray;
+  border-style: solid;
+  width: 80%;
+}

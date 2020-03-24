@@ -1,0 +1,51 @@
+// Mobile screens
+
+$base: 1rem;
+
+.m-5 {
+  margin: $base;
+}
+
+.m-4 {
+  margin: 0.75 * $base;
+}
+
+.m-3 {
+  margin: 0.625 * $base;
+}
+
+.m-2 {
+  margin: 0.5 * $base;
+}
+
+.m-1 {
+  margin: 0.25 * $base;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.ml-5 {
+  margin-left: $base;
+}
+
+.ml-4 {
+  margin-left: 0.75 * $base;
+}
+
+.ml-3 {
+  margin-left: 0.625 * $base;
+}
+
+.ml-2 {
+  margin-left: 0.5 * $base;
+}
+
+.ml-1 {
+  margin-left: 0.25 * $base;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
