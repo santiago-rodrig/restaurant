@@ -37,6 +37,74 @@ function mainImageComponent() {
   return container;
 }
 
+function mainTextComponent() {
+  const container = document.createElement('div');
+  const paragraphOne = document.createElement('p');
+
+  const paragraphOneSentencesOne = [
+    'I\'m sure you want to contact with us as soon as possible.',
+    'You can reach to us via email or phone, that way yo can make a reservation.',
+    'We are open 24/7, so call us or email us whenever you want!',
+    'Just in case, our address is:',
+  ];
+
+  const direction = document.createElement('strong');
+  direction.innerText = ' Local 17, Beverly Mall, Main Avenue, California, U.S.A';
+
+  const paragraphOneSentencesTwo = [
+    '. We are eager to attend you!',
+    'Don\'t forget about sharing your experience with your friends and family!'
+  ];
+
+  const paragraphOneTextOne = document.createTextNode(paragraphOneSentencesOne.join(' '));
+  const paragraphOneTextTwo = document.createTextNode(paragraphOneSentencesTwo.join(' '));
+  paragraphOne.appendChild(paragraphOneTextOne);
+  paragraphOne.appendChild(direction);
+  paragraphOne.appendChild(paragraphOneTextTwo);
+  container.appendChild(paragraphOne);
+  container.classList.add('main-text');
+
+  return container;
+}
+
+function emailComponent(email) {
+  const item = document.createElement('li');
+  const link = document.createElement('a');
+  link.innerText = email;
+  link.target = '_blank';
+
+  link.href = [
+    'mail_to:',
+    email,
+    '?Subject=I%20want%20to%20make%20a%20reservation'
+  ].join('');
+
+  item.appendChild(link);
+
+  return item;
+}
+
+function emailsComponent() {
+  const container = document.createElement('div');
+  const separator = document.createElement('hr');
+  const heading = document.createElement('h2');
+  heading.innerText = 'Emails';
+  heading.classList.add('text-center');
+  const emails = document.createElement('ul');
+  const emailOne = emailComponent('main.email@example.com');
+  const emailTwo = emailComponent('alternative.email@example.com');
+  emails.appendChild(emailOne);
+  emails.appendChild(emailTwo);
+  container.appendChild(separator);
+  container.appendChild(heading);
+  container.appendChild(emails);
+
+  return container;
+}
+
+function phonesComponent() {
+}
+
 function contactComponent() {
   const contact = document.createElement('div');
   contact.classList.add('main-content', 'page-content');
@@ -45,7 +113,9 @@ function contactComponent() {
   const mainContainer = document.createElement('div');
   mainContainer.appendChild(mainImageComponent());
   mainContainer.classList.add('clearfix');
+  mainContainer.appendChild(mainTextComponent());
   contact.appendChild(mainContainer);
+  contact.appendChild(emailsComponent());
 
   return contact;
 }
