@@ -120,4 +120,15 @@ hr {
   border-color: $light-gray;
   border-style: solid;
   width: 80%;
+
+  @media (min-width: 1200px) {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
 }

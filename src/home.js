@@ -30,12 +30,12 @@ function mainImageComponent() {
   const imageContainer = document.createElement('div');
   const image = new Image();
   image.src = MainImage;
-  image.setAttribute('id', 'home-image');
+  image.setAttribute('id', 'main-image');
   imageContainer.appendChild(image);
-  imageContainer.classList.add('main-photo');
+  imageContainer.classList.add('main-image-wrapper');
   container.appendChild(imageContainer);
   container.appendChild(source);
-  container.classList.add('home-image-container');
+  container.classList.add('main-image-container');
 
   return container;
 }
@@ -65,7 +65,7 @@ function mainTextComponent() {
   paragraphOne.appendChild(direction);
   paragraphOne.appendChild(paragraphOneTextTwo);
   container.appendChild(paragraphOne);
-  container.classList.add('home-text');
+  container.classList.add('main-text');
 
   return container;
 }
@@ -177,10 +177,13 @@ function homeComponent() {
   const mainText = mainTextComponent();
   const dishes = dishesComponent();
   const separator = document.createElement('hr');
+  const mainContainer = document.createElement('div');
+  mainContainer.classList.add('clearfix');
   home.classList.add('page-content');
   home.appendChild(mainHeading);
-  home.appendChild(mainImage);
-  home.appendChild(mainText);
+  mainContainer.appendChild(mainImage);
+  mainContainer.appendChild(mainText);
+  home.appendChild(mainContainer);
   home.appendChild(separator);
   home.appendChild(dishes);
   home.classList.add('main-content');

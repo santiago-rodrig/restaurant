@@ -1,6 +1,7 @@
 @import './reset.scss';
 @import './paddings.scss';
-@import './universal.scss'; @import './margins.scss';
+@import './universal.scss';
+@import './margins.scss';
 
 // Browsing Tabs
 
@@ -17,7 +18,7 @@
 
 // Home
 
-.home-image-container {
+.main-image-container {
   div {
     @include centered-box;
     width: 80%;
@@ -33,20 +34,20 @@
   }
 }
 
-.main-photo {
+.main-image-wrapper {
   padding: 0.5rem;
   border: 1px solid $mid-gray;
   transform: rotate(-1deg);
 }
 
-#home-image { border: 1px solid $mid-gray; }
+#main-image { border: 1px solid $mid-gray; }
 
 .photo-source {
   color: $mid-gray;
   font-size: $base-paragraph-size * 0.8;
 }
 
-.home-text {
+.main-text {
   @include centered-box;
   width: 80%;
 }

@@ -1,5 +1,6 @@
 import HomeComponent from './home';
 import ContactComponent from './contact';
+import FooterComponent from './footer';
 // import HelpComponent from './help';
 
 function colorClickHandler(tabs) {
@@ -40,8 +41,8 @@ function tabComponent(iconHTML) {
 
   tab.classList.add(
     'browsing-tab',
-    'p-5',
-    'pl-4'
+    'p-3',
+    'pl-2'
   );
 
   return tab;
@@ -55,6 +56,7 @@ function browsingTabs() {
   const homeTab = tabComponent(homeIcon);
   const contactTab = tabComponent(contactIcon);
   const helpTab = tabComponent(helpIcon);
+  const footer = FooterComponent();
   attachColorClickHandler(homeTab, [contactTab, helpTab]);
   attachColorClickHandler(contactTab, [homeTab, helpTab]);
   attachColorClickHandler(helpTab, [contactTab, homeTab]);

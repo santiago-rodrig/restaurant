@@ -30,7 +30,7 @@ function copyrightComponent() {
 
 function footerComponent() {
   const footer = document.createElement('footer');
-  footer.classList.add('bg-black', 'page-content', 'py-5');
+  footer.classList.add('bg-black', 'page-content', 'py-5', 'mt-5');
   const copyright = copyrightComponent();
   const links = socialLinksComponent();
   footer.appendChild(links);

@@ -1,51 +1,52 @@
 // Mobile screens
 
-$base: 1rem;
+@mixin margins($side) {
+  $base: 1rem;
+  $multiplier: 0;
+  $prefix: '';
 
-.m-5 {
-  margin: $base;
+  @if $side == 'left' { $prefix: 'l'; }
+  @if $side == 'right' { $prefix: 'r'; }
+  @if $side == 'bottom' { $prefix: 'b'; }
+  @if $side == 'top' { $prefix: 't'; }
+  @if $side == 'vertical' { $prefix: 'y'; }
+  @if $side == 'horizontal' { $prefix: 'x'; }
+
+  @if $side == '' {
+    @for $i from 0 through 5 {
+      .m-#{$i} {
+        margin: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else if $prefix != 'y' and $prefix != 'x' {
+    @for $i from 0 through 5 {
+      .m#{$prefix}-#{$i} {
+        margin-#{$side}: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else {
+    @for $i from 0 through 5 {
+      .m#{$prefix}-#{$i} {
+        @if $prefix == 'x' {
+          margin-right: $base * $multiplier;
+          margin-left: $base * $multiplier;
+        } @else {
+          margin-top: $base * $multiplier;
+          margin-bottom: $base * $multiplier;
+        }
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  }
 }
 
-.m-4 {
-  margin: 0.75 * $base;
-}
+$sides: '', 'left', 'right', 'top', 'bottom', 'vertical', 'horizontal';
 
-.m-3 {
-  margin: 0.625 * $base;
-}
-
-.m-2 {
-  margin: 0.5 * $base;
-}
-
-.m-1 {
-  margin: 0.25 * $base;
-}
-
-.m-0 {
-  margin: 0;
-}
-
-.ml-5 {
-  margin-left: $base;
-}
-
-.ml-4 {
-  margin-left: 0.75 * $base;
-}
-
-.ml-3 {
-  margin-left: 0.625 * $base;
-}
-
-.ml-2 {
-  margin-left: 0.5 * $base;
-}
-
-.ml-1 {
-  margin-left: 0.25 * $base;
-}
-
-.ml-0 {
-  margin-left: 0;
+@each $side in $sides {
+  @include margins($side);
 }

@@ -1,87 +1,52 @@
 // Mobile screens
 
-$base: 1rem;
+@mixin paddings($side) {
+  $base: 1rem;
+  $multiplier: 0;
+  $prefix: '';
 
-// All sides
+  @if $side == 'left' { $prefix: 'l'; }
+  @if $side == 'right' { $prefix: 'r'; }
+  @if $side == 'bottom' { $prefix: 'b'; }
+  @if $side == 'top' { $prefix: 't'; }
+  @if $side == 'vertical' { $prefix: 'y'; }
+  @if $side == 'horizontal' { $prefix: 'x'; }
 
-.p-5 {
-  padding: $base;
+  @if $side == '' {
+    @for $i from 0 through 5 {
+      .p-#{$i} {
+        padding: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else if $prefix != 'y' and $prefix != 'x' {
+    @for $i from 0 through 5 {
+      .p#{$prefix}-#{$i} {
+        padding-#{$side}: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else {
+    @for $i from 0 through 5 {
+      .p#{$prefix}-#{$i} {
+        @if $prefix == 'x' {
+          padding-right: $base * $multiplier;
+          padding-left: $base * $multiplier;
+        } @else {
+          padding-top: $base * $multiplier;
+          padding-bottom: $base * $multiplier;
+        }
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  }
 }
 
-.p-4 {
-  padding: 0.75 * $base;
-}
+$sides: '', 'left', 'right', 'top', 'bottom', 'vertical', 'horizontal';
 
-.p-3 {
-  padding: 0.625 * $base;
-}
-
-.p-2 {
-  padding: 0.5 * $base;
-}
-
-.p-1 {
-  padding: 0.25 * $base;
-}
-
-.p-0 {
-  padding: 0;
-}
-
-// Left side
-
-.pl-5 {
-  padding-left: $base;
-}
-
-.pl-4 {
-  padding-left: 0.75 * $base;
-}
-
-.pl-3 {
-  padding-left: 0.625 * $base;
-}
-
-.pl-2 {
-  padding-left: 0.5 * $base;
-}
-
-.pl-1 {
-  padding-left: 0.25 * $base;
-}
-
-.pl-0 {
-  padding-left: 0;
-}
-
-// Top and Bottom
-
-.py-5 {
-  padding-top: $base;
-  padding-bottom: $base;
-}
-
-.py-4 {
-  padding-top: 0.75 * $base;
-  padding-bottom: 0.75 * $base;
-}
-
-.py-3 {
-  padding-top: 0.625 * $base;
-  padding-bottom: 0.625 * $base;
-}
-
-.py-2 {
-  padding-top: 0.5 * $base;
-  padding-bottom: 0.5 * $base;
-}
-
-.py-1 {
-  padding-top: 0.25 * $base;
-  padding-bottom: 0.25 * $base;
-}
-
-.py-0 {
-  padding-top: 0;
-  padding-bottom: 0;
+@each $side in $sides {
+  @include paddings($side);
 }
