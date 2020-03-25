@@ -2,6 +2,7 @@ import ClickHandler from './events/click';
 
 function tabBuilder(iconHTML, component, id) {
   const tab = document.createElement('div');
+
   tab.innerHTML = iconHTML;
   tab.component = component;
   tab.id = id;

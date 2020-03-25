@@ -1,5 +1,6 @@
 import HomeComponent from '../home/index';
 import ContactComponent from '../contact/index';
+import AboutComponent from '../about/index';
 import tabBuilder from './tab';
 
 function tabsComponent() {
@@ -17,7 +18,13 @@ function tabsComponent() {
     'contact-tab'
   );
 
-  for (const tab of [homeTab, contactTab]) tabs.appendChild(tab);
+  const aboutTab = tabBuilder(
+    '<i class="fas fa-question-circle"></i>',
+    AboutComponent,
+    'about-tab'
+  );
+
+  for (const tab of [homeTab, contactTab, aboutTab]) tabs.appendChild(tab);
 
   tabs.classList.add('bg-light-gray', 'fixed-left');
 

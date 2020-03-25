@@ -1,7 +1,11 @@
-function aboutSectionComponent(component, separate=true) {
-}
+import RestaurantComponent from './restaurant/index';
 
 function aboutComponent() {
+  const container = document.createElement('div');
+
+  container.appendChild(RestaurantComponent);
+
+  return container;
 }
 
-export default aboutComponent;
+export default aboutComponent();
