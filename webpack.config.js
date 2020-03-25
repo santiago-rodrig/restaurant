@@ -6,18 +6,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/index.js'
+    app: './src/js/index.js'
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      title: 'Restaurant Logo',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/chef.png',
+      logo: './src/images/favicon.png',
       mode: 'webapp',
       devMode: 'webapp',
       favicons: {

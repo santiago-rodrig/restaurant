@@ -3,41 +3,25 @@
 @import './universal.scss';
 @import './margins.scss';
 
-// Content
-
-#content {
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 10rem;
-
-  @media (min-width: 576px) {
-  }
-}
-
 // Browsing Tabs
 
-.browsing-tab {
+.tab {
   width: 3rem;
   border-left: 4px solid $mid-gray;
 
   &:hover { border-left-color: $dark-gray; cursor: pointer; }
 }
 
-// Page Content
-
-.page-content { margin-left: 3rem; }
-
 // Main
 
-.main-image-container {
-  div {
-    @include centered-box;
-    width: 80%;
-  }
+#main-image-container {
+  @include centered-box;
+  width: 80%;
 
   @media (min-width: 768px) {
     float: left;
     width: 20rem;
+    margin-right: 1.5rem;
   }
 
   @media (min-width: 992px) {
@@ -49,7 +33,7 @@
   }
 }
 
-.main-image-wrapper {
+#main-image-wrapper {
   padding: 0.5rem;
   border: 1px solid $mid-gray;
   transform: rotate(-1deg);
@@ -71,6 +55,8 @@
   @include centered-box;
   width: 80%;
   padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 
   @media (min-width: 768px) {
     display: flex;
@@ -138,7 +124,7 @@
 
 // Contact
 
-.contact-emails, .contact-phones {
+#emails-container, #phones-container {
   @media (min-width: 768px) {
     text-align: left;
     font-size: $base-paragraph-size * 1.2;
@@ -153,14 +139,14 @@
   }
 }
 
-.contact-data {
+#contact-data {
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
   }
 }
 
-.emails, .phones {
+#emails, #phones {
   @media (min-width: 768px) {
     h2 {
       text-align: left;

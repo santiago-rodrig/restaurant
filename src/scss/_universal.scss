@@ -26,6 +26,14 @@ $mid-gray: #C8CDD0;
 $dark-gray: #415058;
 $black: #1F292E;
 
+// Body
+
+body {
+  padding-left: 3rem;
+  position: relative;
+  padding-bottom: 10rem;
+}
+
 // Headings
 
 h1, h2 { font-family: 'Courgette', cursive; color: $black; }
