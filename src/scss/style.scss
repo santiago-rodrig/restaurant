@@ -126,8 +126,7 @@
 
 #emails-container, #phones-container {
   @media (min-width: 768px) {
-    text-align: left;
-    font-size: $base-paragraph-size * 1.2;
+    h2 { text-align: left; }
   }
 
   li {
@@ -148,9 +147,8 @@
 
 #emails, #phones {
   @media (min-width: 768px) {
-    h2 {
-      text-align: left;
-    }
+    text-align: left;
+    font-size: $base-paragraph-size * 1.2;
   }
 }
 
