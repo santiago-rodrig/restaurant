@@ -56,15 +56,15 @@ function browsingTabs() {
   const helpIcon = '<i class="fas fa-question"></i>';
   const homeTab = tabComponent(homeIcon);
   const contactTab = tabComponent(contactIcon);
-  const helpTab = tabComponent(helpIcon);
+  const aboutTab = tabComponent(helpIcon);
   const footer = FooterComponent();
-  attachColorClickHandler(homeTab, [contactTab, helpTab]);
-  attachColorClickHandler(contactTab, [homeTab, helpTab]);
-  attachColorClickHandler(helpTab, [contactTab, homeTab]);
+  attachColorClickHandler(homeTab, [contactTab, aboutTab]);
+  attachColorClickHandler(contactTab, [homeTab, aboutTab]);
+  attachColorClickHandler(aboutTab, [contactTab, homeTab]);
   attachReplaceClickHandler(homeTab, HomeComponent());
   attachReplaceClickHandler(contactTab, ContactComponent());
   // attachReplaceClickHandler(helpTab, HelpComponent());
-  const tabCollection = [homeTab, contactTab, helpTab];
+  const tabCollection = [homeTab, contactTab, aboutTab];
 
   for (const tab of tabCollection) {
     tabs.appendChild(tab);
