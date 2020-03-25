@@ -1,5 +1,5 @@
 import ImageUtilities from '../../lib/images';
-import MainImage from '../../../images/about/restaurant.jpg';
+import MainImage from '../../../images/about/chef.jpg';
 
 function mainImageComponent() {
   const container = document.createElement('div');
@@ -7,9 +7,9 @@ function mainImageComponent() {
 
   const image = ImageUtilities.detailedImage(
     MainImage,
-    'Christian Chen',
-    'https://unsplash.com/@christianchen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
-    'https://unsplash.com/s/photos/restaurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+    'Hermant Latawa',
+    'https://unsplash.com/@hemantlatawa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+    'https://unsplash.com/s/photos/chef?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
   );
 
   container.classList.add('about-image-container');
