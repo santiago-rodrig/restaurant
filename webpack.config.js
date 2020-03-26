@@ -6,15 +6,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/js/index.js'
+    app: './src/js/index.js',
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Restaurant Logo',
       meta: {
-        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      }
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      },
     }),
     new FaviconsWebpackPlugin({
       logo: './src/images/favicon.png',
@@ -29,17 +29,17 @@ module.exports = {
         theme_color: '#333',
         icons: {
           coast: false,
-          yandex: false
-        }
-      }
-    })
+          yandex: false,
+        },
+      },
+    }),
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
   },
   module: {
     rules: [
@@ -47,32 +47,32 @@ module.exports = {
         test: /\.csv$/,
         loader: 'csv-loader',
         options: {
-          skipEmptyLines: true
-        }
+          skipEmptyLines: true,
+        },
       },
       {
         test: /\.txt$/,
         use: [
-          'raw-loader'
-        ]
+          'raw-loader',
+        ],
       },
       {
         test: /\.html$/,
         use: [
-          'html-loader'
-        ]
+          'html-loader',
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
-          'file-loader'
-        ]
+          'file-loader',
+        ],
       },
       {
         test: /\.(jpg|svg|png|gif)$/,
         use: [
-          'file-loader'
-        ]
+          'file-loader',
+        ],
       },
       {
         test: /\.scss$/,
@@ -82,23 +82,25 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function() {
+              plugins() {
                 return [
-                  require('autoprefixer')
+                  /* eslint-disable global-require */
+                  require('autoprefixer'),
+                  /* eslint-enable global-require */
                 ];
-              }
-            }
+              },
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ],
+  },
 };
