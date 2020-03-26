@@ -1,7 +1,9 @@
+/* eslint-disable import/no-unresolved */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+/* eslint-enable import/no-unresolved */
 
 module.exports = {
   mode: 'development',
