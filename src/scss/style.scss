@@ -66,8 +66,6 @@
 }
 
 .dishes {
-  @include centered-box;
-  width: 80%;
   padding: 0;
   margin-bottom: 0;
   margin-top: 0;
@@ -117,7 +115,7 @@
   }
 
   @media (min-width: 1200px) {
-    flex-basis: 30rem;
+    flex-basis: 26rem;
   }
 
   img { border-radius: 1rem; }
