@@ -44,6 +44,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          skipEmptyLines: true
+        }
+      },
+      {
         test: /\.txt$/,
         use: [
           'raw-loader'

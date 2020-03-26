@@ -19,8 +19,11 @@ export default (function() {
     return imageSource;
   }
 
-  const detailedImage = (src, author, authorUrl, siteUrl, site='Unsplash') => {
+  const detailedImage = (src, data) => {
+    const [author, authorUrl, siteUrl] = data;
+    const site = 'Unsplash';
     let image = new Image();
+
     image = Object.assign(image, { src, author, authorUrl, site, siteUrl });
 
     return image;

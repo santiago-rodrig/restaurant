@@ -1,14 +1,9 @@
 import MainImage from '../../../images/contact/main.jpg';
 import ImageUtilities from '../../lib/images';
+import MainImageData from './main-image-data.csv';
 
 function mainImageComponent() {
-  const image = ImageUtilities.detailedImage(
-    MainImage,
-    'Febrian Zakaria',
-    'https://unsplash.com/@febrianzakaria?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
-    'https://unsplash.com/s/photos/chef?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
-  );
-
+  const image = ImageUtilities.detailedImage(MainImage, MainImageData);
   const source = ImageUtilities.source(image);
   const container = document.createElement('div');
   const wrapper = document.createElement('div');
