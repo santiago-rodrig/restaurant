@@ -20,6 +20,7 @@ export default (function() {
   }
 
   const detailedImage = (src, data) => {
+    console.log(data);
     const [author, authorUrl, siteUrl] = data;
     const site = 'Unsplash';
     let image = new Image();

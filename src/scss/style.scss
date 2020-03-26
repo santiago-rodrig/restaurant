@@ -6,7 +6,15 @@
 // Header
 
 #main-header {
-  margin-bottom: 7rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 5rem;
+  }
 }
 
 // Browsing Tabs
