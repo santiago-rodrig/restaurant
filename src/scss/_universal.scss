@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'Courgette';
+  src: url('../fonts/Courgette-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto-Italic.ttf') format('truetype');
+  font-weight: 400, 900, 400;
+  font-style: normal, normal, italic;
+}
+
+@mixin centered-box() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$primary: #E25F4A;
+$success: #55DD55;
+$error: #E24D36;
+$warning: #EDC25E;
+$light-gray: #F2F2F3;
+$mid-gray: #C8CDD0;
+$dark-gray: #415058;
+$black: #1F292E;
+
+// Body
+
+body {
+  padding-left: 3rem;
+  position: relative;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+}
+
+// Headings
+
+h1, h2 { font-family: 'Courgette', cursive; color: $black; }
+
+@mixin heading($number, $base) {
+  h#{$number} {
+    font-size: $base;
+
+    @media (min-width: 576px) {
+      font-size: $base * 1.25;
+    }
+
+    @media (min-width: 768px) {
+      font-size: $base * 1.375;
+    }
+
+    @media (min-width: 992px) {
+      font-size: $base * 1.5;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: $base * 1.75;
+    }
+  }
+}
+
+@include heading('1', 2rem);
+@include heading('2', 1.5rem);
+
+// Paragraphs {
+
+$base-paragraph-size: 1rem;
+$base-line-height: 1.5;
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: $black;
+  line-height: $base-line-height;
+}
+
+// Images
+
+img { max-width: 100%; }
+
+// Positioning
+
+.fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+// Backgrounds
+
+.bg-light-gray { background-color: $light-gray; }
+
+.bg-mid-gray { background-color: $mid-gray; }
+
+.bg-black { background-color: $black; }
+
+// Borders
+
+.border-left-primary { border-left-color: $primary !important; }
+
+// Text
+
+.text-center { text-align: center; }
+
+.text-light-gray { color: $light-gray; }
+
+// Links
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $primary;
+  }
+}
+
+// Lists
+
+ul { list-style-type: none; padding-left: 0; }
+
+// Horizontal lines
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: $light-gray;
+  border-style: solid;
+  width: 80%;
+
+  @media (min-width: 1200px) {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}

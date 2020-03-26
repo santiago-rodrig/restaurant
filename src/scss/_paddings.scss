@@ -1,0 +1,52 @@
+// Mobile screens
+
+@mixin paddings($side) {
+  $base: 1rem;
+  $multiplier: 0;
+  $prefix: '';
+
+  @if $side == 'left' { $prefix: 'l'; }
+  @if $side == 'right' { $prefix: 'r'; }
+  @if $side == 'bottom' { $prefix: 'b'; }
+  @if $side == 'top' { $prefix: 't'; }
+  @if $side == 'vertical' { $prefix: 'y'; }
+  @if $side == 'horizontal' { $prefix: 'x'; }
+
+  @if $side == '' {
+    @for $i from 0 through 5 {
+      .p-#{$i} {
+        padding: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else if $prefix != 'y' and $prefix != 'x' {
+    @for $i from 0 through 5 {
+      .p#{$prefix}-#{$i} {
+        padding-#{$side}: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else {
+    @for $i from 0 through 5 {
+      .p#{$prefix}-#{$i} {
+        @if $prefix == 'x' {
+          padding-right: $base * $multiplier;
+          padding-left: $base * $multiplier;
+        } @else {
+          padding-top: $base * $multiplier;
+          padding-bottom: $base * $multiplier;
+        }
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  }
+}
+
+$sides: '', 'left', 'right', 'top', 'bottom', 'vertical', 'horizontal';
+
+@each $side in $sides {
+  @include paddings($side);
+}
