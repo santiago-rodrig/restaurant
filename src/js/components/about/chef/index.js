@@ -9,11 +9,8 @@ function chefComponent() {
 
   wrapper.id = 'about-middle-section';
   wrapper.classList.add('about-section');
-  wrapper.appendChild(MainHeadingComponent);
-  wrapper.appendChild(MainImageComponent);
-  wrapper.appendChild(MainTextComponent);
-  container.appendChild(separator);
-  container.appendChild(wrapper);
+  wrapper.append(MainHeadingComponent, MainImageComponent, MainTextComponent);
+  container.append(separator, wrapper);
 
   return container;
 }

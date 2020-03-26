@@ -1,9 +1,9 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all';
 
-/* eslint-enable import/no-unresolved */
+/* eslint-enable import/no-unresolved, import/no-extraneous-dependencies */
 
 import '../scss/style.scss';
 import TabsComponent from './components/tabs/index';
@@ -22,9 +22,6 @@ const {
 charset.setAttribute('charset', 'UTF-8');
 content.id = 'content';
 content.classList.add('px-5');
-head.appendChild(charset);
-body.appendChild(TabsComponent);
-body.appendChild(HeaderComponent);
-body.appendChild(content);
-body.appendChild(FooterComponent);
-document.getElementById('home-tab').dispatchEvent(new Event('click'));
+head.append(charset);
+body.append(TabsComponent, HeaderComponent, content, FooterComponent);
+document.getElementById('home-tab').click();
