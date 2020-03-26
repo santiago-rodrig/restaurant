@@ -1,16 +1,11 @@
 import ImageUtilities from '../../../lib/images';
 import MainImage from '../../../../images/about/chef.jpg';
+import MainImageData from './main-image-data.csv';
 
 function mainImageComponent() {
   const container = document.createElement('div');
   const wrapper = document.createElement('div');
-
-  const image = ImageUtilities.detailedImage(
-    MainImage,
-    'Hermant Latawa',
-    'https://unsplash.com/@hemantlatawa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
-    'https://unsplash.com/s/photos/chef?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
-  );
+  const image = ImageUtilities.detailedImage(MainImage, MainImageData[0]);
 
   container.classList.add('about-image-container');
   wrapper.classList.add('about-image-wrapper');

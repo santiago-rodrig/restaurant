@@ -14,9 +14,9 @@ function dishesComponent() {
   const container = document.createElement('div');
   const heading = document.createElement('h2');
   const list = document.createElement('ul');
-  const pastaImage = ImageUtilities.detailedImage(PastaImage, PastaImageData);
-  const tacosImage = ImageUtilities.detailedImage(TacosImage, TacosImageData);
-  const burguerImage = ImageUtilities.detailedImage(BurguerImage, BurguerImageData);
+  const pastaImage = ImageUtilities.detailedImage(PastaImage, PastaImageData[0]);
+  const tacosImage = ImageUtilities.detailedImage(TacosImage, TacosImageData[0]);
+  const burguerImage = ImageUtilities.detailedImage(BurguerImage, BurguerImageData[0]);
   const pastaDescription = PastaDescription.replace(/\n/gi, ' ');
   const tacosDescription = TacosDescription.replace(/\n/gi, ' ');
   const burguerDescription = BurguerDescription.replace(/\n/gi, ' ');

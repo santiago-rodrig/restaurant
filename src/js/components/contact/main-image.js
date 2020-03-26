@@ -3,7 +3,7 @@ import ImageUtilities from '../../lib/images';
 import MainImageData from './main-image-data.csv';
 
 function mainImageComponent() {
-  const image = ImageUtilities.detailedImage(MainImage, MainImageData);
+  const image = ImageUtilities.detailedImage(MainImage, MainImageData[0]);
   const source = ImageUtilities.source(image);
   const container = document.createElement('div');
   const wrapper = document.createElement('div');
