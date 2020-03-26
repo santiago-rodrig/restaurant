@@ -86,9 +86,9 @@ module.exports = {
             options: {
               plugins() {
                 return [
-                  /* eslint-disable global-require */
+                  /* eslint-disable global-require, import/no-unresolved */
                   require('autoprefixer'),
-                  /* eslint-enable global-require */
+                  /* eslint-enable global-require, import/no-unresolved */
                 ];
               },
             },
