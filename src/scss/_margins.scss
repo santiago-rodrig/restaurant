@@ -1,0 +1,52 @@
+// Mobile screens
+
+@mixin margins($side) {
+  $base: 1rem;
+  $multiplier: 0;
+  $prefix: '';
+
+  @if $side == 'left' { $prefix: 'l'; }
+  @if $side == 'right' { $prefix: 'r'; }
+  @if $side == 'bottom' { $prefix: 'b'; }
+  @if $side == 'top' { $prefix: 't'; }
+  @if $side == 'vertical' { $prefix: 'y'; }
+  @if $side == 'horizontal' { $prefix: 'x'; }
+
+  @if $side == '' {
+    @for $i from 0 through 5 {
+      .m-#{$i} {
+        margin: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else if $prefix != 'y' and $prefix != 'x' {
+    @for $i from 0 through 5 {
+      .m#{$prefix}-#{$i} {
+        margin-#{$side}: $base * $multiplier;
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  } @else {
+    @for $i from 0 through 5 {
+      .m#{$prefix}-#{$i} {
+        @if $prefix == 'x' {
+          margin-right: $base * $multiplier;
+          margin-left: $base * $multiplier;
+        } @else {
+          margin-top: $base * $multiplier;
+          margin-bottom: $base * $multiplier;
+        }
+      }
+
+      $multiplier: $multiplier + 0.25;
+    }
+  }
+}
+
+$sides: '', 'left', 'right', 'top', 'bottom', 'vertical', 'horizontal';
+
+@each $side in $sides {
+  @include margins($side);
+}
