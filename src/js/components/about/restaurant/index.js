@@ -5,7 +5,7 @@ import MainHeadingComponent from './main-heading';
 function restaurantComponent() {
   const container = document.createElement('div');
 
-  container.classList.add('clearfix', 'about-section');
+  container.classList.add('about-section');
   container.appendChild(MainHeadingComponent);
   container.appendChild(MainImageComponent);
   container.appendChild(MainTextComponent);

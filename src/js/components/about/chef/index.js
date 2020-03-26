@@ -7,6 +7,7 @@ function chefComponent() {
   const wrapper = document.createElement('div');
   const separator = document.createElement('hr');
 
+  wrapper.id = 'about-middle-section';
   wrapper.classList.add('about-section');
   wrapper.appendChild(MainHeadingComponent);
   wrapper.appendChild(MainImageComponent);

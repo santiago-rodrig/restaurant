@@ -200,7 +200,10 @@
 
     & > * { flex: 0 0 37%; }
 
-    h2 { flex-basis: 20%; order: 1; }
+    h2 {
+      flex-basis: 20%;
+      order: 1;
+    }
 
     .about-text { order: 2; }
 
@@ -208,11 +211,14 @@
   }
 }
 
-.about-section:nth-child(2) {
+#about-middle-section {
   @media (min-width: 768px) {
     & > h2 { order: 3; }
 
-    & > .about-image-container { order: 1; transform: rotate(-1deg); }
+    & > .about-image-container {
+      order: 1;
+      transform: rotate(-1deg);
+    }
   }
 }
 
