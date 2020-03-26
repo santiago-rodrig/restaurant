@@ -1,5 +1,4 @@
 import MainImageComponent from './main-image';
-import ImageUtilities from '../../lib/images';
 import MainTextComponent from './main-text';
 import DishesComponent from './dishes';
 
@@ -11,9 +10,8 @@ function homeComponent() {
   const separator = document.createElement('hr');
   const mainContainer = document.createElement('div');
 
-  for (const elem of [mainImage, mainText]) mainContainer.appendChild(elem);
-  for (const elem of [mainContainer, separator, dishes]) container.appendChild(elem);
-
+  [mainImage, mainText].forEach(a => mainContainer.appendChild(a));
+  [mainContainer, separator, dishes].forEach(a => container.appendChild(a));
   mainContainer.classList.add('clearfix');
 
   return container;

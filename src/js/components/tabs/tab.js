@@ -6,12 +6,12 @@ function tabBuilder(iconHTML, component, id) {
   tab.innerHTML = iconHTML;
   tab.component = component;
   tab.id = id;
-  ClickHandler.attach('all', tab);
+  ClickHandler.attach(tab);
 
   tab.classList.add(
     'tab',
     'p-3',
-    'pl-2'
+    'pl-2',
   );
 
   return tab;

@@ -1,9 +1,12 @@
-const clickHandler = (function() {
+function clickHandler() {
   function color() {
-    for (const tab of document.getElementsByClassName('tab')) {
-      if (tab !== this) {
-        tab.classList.remove('border-left-primary');
-      }
+    const tabs = document.getElementsByClassName('tab');
+    let tab;
+
+    for (let i = 0; i < tabs.length; i += 1) {
+      tab = tabs[i];
+
+      if (tab !== this) tab.classList.remove('border-left-primary');
     }
 
     if (!this.classList.contains('border-left-primary')) {
@@ -20,16 +23,12 @@ const clickHandler = (function() {
     window.scrollTo(0, 0);
   }
 
-  const attach = (which, node) => {
-    switch (which) {
-      case 'all':
-        node.addEventListener('click', color.bind(node));
-        node.addEventListener('click', replace.bind(undefined, node.component));
-        break;
-    }
-  }
+  const attach = (node) => {
+    node.addEventListener('click', color.bind(node));
+    node.addEventListener('click', replace.bind(undefined, node.component));
+  };
 
   return { attach };
-})();
+}
 
-export default clickHandler;
+export default clickHandler();

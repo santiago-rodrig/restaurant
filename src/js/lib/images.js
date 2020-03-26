@@ -1,4 +1,4 @@
-export default (function() {
+function imageUtilities() {
   const source = (image) => {
     const imageSource = document.createElement('p');
     const imageAuthor = document.createElement('a');
@@ -17,17 +17,21 @@ export default (function() {
     imageSource.classList.add('photo-source', 'text-center');
 
     return imageSource;
-  }
+  };
 
   const detailedImage = (src, data) => {
     const [author, authorUrl, siteUrl] = data;
     const site = 'Unsplash';
     let image = new Image();
 
-    image = Object.assign(image, { src, author, authorUrl, site, siteUrl });
+    image = Object.assign(image, {
+      src, author, authorUrl, site, siteUrl,
+    });
 
     return image;
-  }
+  };
 
   return { source, detailedImage };
-})();
+}
+
+export default imageUtilities();

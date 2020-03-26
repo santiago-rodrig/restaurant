@@ -24,9 +24,8 @@ function dishesComponent() {
   const tacos = dishBuilder('Tacos', tacosDescription, tacosImage, '$15');
   const burguer = dishBuilder('Hamburguer', burguerDescription, burguerImage, '$10');
 
-  for (const dish of [pasta, tacos, burguer]) list.appendChild(dish);
-  for (const elem of [heading, list]) container.appendChild(elem);
-
+  [pasta, tacos, burguer].forEach(a => list.appendChild(a));
+  [heading, list].forEach(a => container.appendChild(a));
   heading.innerText = 'Dishes';
   heading.classList.add('text-center');
   list.classList.add('dishes');

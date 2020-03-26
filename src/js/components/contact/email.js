@@ -8,7 +8,7 @@ function emailBuilder(email) {
   emailLink.href = [
     'mailto:',
     email,
-    '?Subject=I%20want%20to%20make%20a%20reservation'
+    '?Subject=I%20want%20to%20make%20a%20reservation',
   ].join('');
 
   item.appendChild(emailLink);
