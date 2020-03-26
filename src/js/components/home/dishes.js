@@ -1,8 +1,8 @@
-import ImageUtilities from '../lib/images';
+import ImageUtilities from '../../lib/images';
 import dishBuilder from './dish';
-import PastaImage from '../../images/home/pasta.jpg';
-import TacosImage from '../../images/home/tacos.jpg';
-import BurguerImage from '../../images/home/burguer.jpg';
+import PastaImage from '../../../images/home/pasta.jpg';
+import TacosImage from '../../../images/home/tacos.jpg';
+import BurguerImage from '../../../images/home/burguer.jpg';
 
 function dishesComponent() {
   const container = document.createElement('div');

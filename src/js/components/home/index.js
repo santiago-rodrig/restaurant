@@ -1,5 +1,5 @@
 import MainImageComponent from './main-image';
-import ImageUtilities from '../lib/images';
+import ImageUtilities from '../../lib/images';
 import MainTextComponent from './main-text';
 import DishesComponent from './dishes';
 

@@ -1,4 +1,4 @@
-import ImageUtilities from '../lib/images';
+import ImageUtilities from '../../lib/images';
 
 function dishBuilder(name, description, image, price) {
   const item = document.createElement('li');

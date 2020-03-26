@@ -1,9 +1,9 @@
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all';
 import '../scss/style.scss';
-import TabsComponent from './tabs/index';
-import HeaderComponent from './header/index';
-import FooterComponent from './footer/index';
+import TabsComponent from './components/tabs/index';
+import HeaderComponent from './components/header/index';
+import FooterComponent from './components/footer/index';
 
 const head = document.head;
 const body = document.body;

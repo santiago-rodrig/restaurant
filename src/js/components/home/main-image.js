@@ -1,5 +1,5 @@
-import MainImage from '../../images/home/main.jpg';
-import ImageUtilities from '../lib/images';
+import MainImage from '../../../images/home/main.jpg';
+import ImageUtilities from '../../lib/images';
 
 function mainImageComponent() {
   const container = document.createElement('div');

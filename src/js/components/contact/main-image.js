@@ -1,5 +1,5 @@
-import MainImage from '../../images/contact/main.jpg';
-import ImageUtilities from '../lib/images';
+import MainImage from '../../../images/contact/main.jpg';
+import ImageUtilities from '../../lib/images';
 
 function mainImageComponent() {
   const image = ImageUtilities.detailedImage(

@@ -1,5 +1,5 @@
-import ImageUtilities from '../../lib/images';
-import MainImage from '../../../images/about/restaurant.jpg';
+import ImageUtilities from '../../../lib/images';
+import MainImage from '../../../../images/about/restaurant.jpg';
 
 function mainImageComponent() {
   const container = document.createElement('div');
