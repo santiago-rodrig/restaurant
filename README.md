@@ -45,9 +45,6 @@ made up history.
 2. `cd restaurant`
 3. `npm install`
 
-Now, in order to build the source code, you need to create a folder called
-**dist**, to do so just run `mkdir dist`.
-
 To produce the source code output you need to execute `npm run build` (a script
 instruction in `package.json`), but you can also run `npx webpack` instead.
 
