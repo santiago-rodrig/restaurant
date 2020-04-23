@@ -68,7 +68,7 @@ This project was developed by
 
 You can reach me out at the following URLs
 
-- [github](https://github.com/santiago-rodrig)
-- [linkedin](https://www-linkedin.com/in/santiago-adres-rodriguez-marquez)
-- [angellist](https://angellist.co/u/santiago-andres-rodriguez-marquez)
+- [Github](https://github.com/santiago-rodrig)
+- [LinkedIn](https://www.linkedin.com/in/santiago-adres-rodriguez-marquez)
+- [AngelList](https://angel.co/u/santiago-andres-rodriguez-marquez)
 - [santo1996.29@gmail.com](mailto:santo1996.29@gmail.com)
