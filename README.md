@@ -63,3 +63,12 @@ condition of giving credit to its author and noticing the license.
 
 This project was developed by
 [santiago-rodrig](https://github.com/santiago-rodrig).
+
+## Contact
+
+You can reach me out at the following URLs
+
+- [github](https://github.com/santiago-rodrig)
+- [linkedin](https://www-linkedin.com/in/santiago-adres-rodriguez-marquez)
+- [angellist](https://angellist.co/u/santiago-andres-rodriguez-marquez)
+- [santo1996.29@gmail.com](mailto:santo1996.29@gmail.com)
