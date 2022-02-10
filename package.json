@@ -40,6 +40,6 @@
     "webpack-dev-server": "^3.10.3",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "autoprefixer": "^9.7.4",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
